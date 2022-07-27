@@ -5,3 +5,10 @@
     font-size: 3rem;
     font-weight: 800;
 }
+
+.st-font{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: gold;
+    font-weight: 700;
+}

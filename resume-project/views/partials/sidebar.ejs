@@ -5,20 +5,20 @@
         <h3 class="user-name mt-5">Prince Ahmed</h3>
     </div>
     <!-- ============== navigation =========== -->
-   <ul class="links">
-        <li class="font-mono text-2xl w-[100%] hover:bg-[gold] hover:text-[#222] py-2">
-            <a   href="/">Home</a>
-        </li>
-        <li class="font-mono text-2xl w-[100%] hover:bg-[gold] hover:text-[#222] py-2">
-            <a href="/about">About</a>
-        </li>
-        <li class="font-mono text-2xl w-[100%] hover:bg-[gold] hover:text-[#222] py-2">
-            <a href="/services">Services</a>
-        </li>
-        <li class="font-mono text-2xl w-[100%] hover:bg-[gold] hover:text-[#222] py-2">
-            <a href="/skills">Skills</a>
-        </li>
-   </ul>
+    <ul class="links">
+            <li class="font-mono text-2xl w-[100%] hover:bg-[#888] hover:text-[#222] py-2 <% if(page_name == 'home') { %> bg-[gold] text-[#222] <% } %>">
+                <a   href="/">Home</a>
+            </li>
+            <li class="font-mono text-2xl w-[100%] hover:bg-[#888] hover:text-[#222] py-2 <% if(page_name == 'about') { %> bg-[gold] text-[#222] <% } %>">
+                <a href="/about">About</a>
+            </li>
+            <li class="font-mono text-2xl w-[100%] hover:bg-[#888] hover:text-[#222] py-2 <% if(page_name == 'services') { %> bg-[gold] text-[#222] <% } %>">
+                <a href="/services">Services</a>
+            </li>
+            <li class="font-mono text-2xl w-[100%] hover:bg-[#888] hover:text-[#222] py-2 <% if(page_name == 'skills') { %> bg-[gold] text-[#222] <% } %>">
+                <a href="/skills">Skills</a>
+            </li>
+    </ul>
    <div class="social-links">
      <!-- <i class="fa-brands fa-facebook-f"></i> -->
    </div>
