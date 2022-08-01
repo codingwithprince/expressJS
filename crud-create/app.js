@@ -10,4 +10,4 @@ connectdb(DB_URL)
 
 // dataInsert()
 
-dataInsert('esha', 17, false)
+dataInsert('esha', 17, false);

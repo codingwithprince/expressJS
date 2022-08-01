@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 
-
-const dataInsert = async( nm, ag, isact) =>{
- try{
 // creating schema
 const studentSchema = new mongoose.Schema({
     name: {type: String, required: true},
@@ -13,6 +10,9 @@ const studentSchema = new mongoose.Schema({
 
 // compiling schema with creating model
 const studentModel = mongoose.model('students', studentSchema);
+
+const dataInsert = async( nm, ag, isact) =>{
+ try{
 
 // creating student document
 const studentDoc = new studentModel({
