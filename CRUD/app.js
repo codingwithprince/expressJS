@@ -11,6 +11,9 @@ const url = process.env.url || 'mongodb://127.0.0.1:27017'
 // setting up static file
 app.use(express.static(join(process.cwd(), 'public')));
 
+// using middleware
+app.use(express.urlencoded({ extended: false }))
+
 // setting template engine
 app.set('view engine', 'ejs');
 
@@ -21,7 +24,7 @@ app.use(web)
 connectDB(url)
 
 // insert document 
-// insertDoc('Esha', 17, 2018)
+// insertDoc('Tanha', 16, 2017)
 
 app.listen(port, ()=> {
     console.log(`Server is running at http://localhost:${port}`)
