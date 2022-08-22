@@ -2,7 +2,7 @@ import express from 'express'
 import { join } from 'path';
 import web from './routes/web.js'
 import connectDB from './db/connect.js'
-import { insertDoc} from './model/Student.js';
+import { insertDoc } from './model/Student.js';
 
 const app = express()
 const port = process.env.port || 8080;
