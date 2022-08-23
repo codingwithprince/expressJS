@@ -3,7 +3,7 @@ import userModel from "../model/userModel.js";
 class userController {
   static home = async (req, res) => {
     try {
-      res.render("index", { title: 'home'});
+      res.render("index", { title: "home" });
     } catch (error) {
       console.log(error);
     }
@@ -11,7 +11,7 @@ class userController {
 
   static login = async (req, res) => {
     try {
-      res.render("login", { title: 'login'});
+      res.render("login", { title: "login" });
     } catch (error) {
       console.log(error);
     }
@@ -19,16 +19,7 @@ class userController {
 
   static reg = async (req, res) => {
     try {
-      res.render("register", { title: 'registration'});
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  static regPost = async (req, res) => {
-    try {
-      console.log(req.body);
-      res.redirect('/')
+      res.render("register", { title: "registration" });
     } catch (error) {
       console.log(error);
     }
@@ -36,15 +27,37 @@ class userController {
 
   static createUser = async (req, res) => {
     try {
-      const user = {
-        name: "prince",
-        email: "prince@gmail.com",
-        pass: "123456",
-      };
-      const userDoc = userModel(user);
+      const { name, email, password } = req.body;
+
+      const userDoc = userModel({
+        name: name,
+        email: email,
+        pass: password,
+      });
+
       const result = await userDoc.save();
-      console.log(result);
-      res.send("created..");
+      res.redirect("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  static verifyUser = async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const result = await userModel.findOne({ email: email});
+
+      if(result != null) {
+        if (result.email == email && result.pass == password) {
+          res.redirect('/')
+        } else {
+          res.send('Pass vul')
+        }
+      } else {
+        res.send('Not registered')
+      }
+
+    
     } catch (error) {
       console.log(error);
     }

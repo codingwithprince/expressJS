@@ -4,7 +4,7 @@ const connectDB = async (url) => {
     try {
         const options = {
             user: 'prince',
-            dbName: 'schooldb',
+            dbName: 'blogdb',
             pass: '123456',
             authSource: 'admin'
         }
